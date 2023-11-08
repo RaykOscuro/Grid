@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: repeat(3, 150px);
+  max-width: 950px;
+  margin: auto;
+  max-height: 950px;
+  gap: 10px;
+}
+
+.box {
+  min-width: 100px;
+  min-height: 100px;
+  background-color: lightgray;
+}
+
+.box-one {
+  background-color: brown;
+  grid-column: 2 / 3;
+}
+
+.box-two {
+  background-color: aquamarine;
+}
+
+.box-three {
+  background-color: blueviolet;
+  grid-row: 1 / 3;
+}
