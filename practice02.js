@@ -56,26 +56,30 @@ for (const user of users) {
 
 for (const user of users) {
   let greeting = "";
-  for (const friend of user.friends) {
-    greeting += `Hello ${friend}, `;
+  for (let x = 0; user.friends.length > x; x++) {
+    if (x === user.friends.length - 1) {
+      greeting += `Hello ${user.friends[x]}!`;
+    } else {
+      greeting += `Hello ${user.friends[x]}, `;
+    }
   }
   console.log(greeting);
 }
 
 for (const user of users) {
-  for (const addressPart of Object.entries(user.address)) {
-    console.log(addressPart[1]);
+  for (const addressPart in user.address) {
+    console.log(user.address[addressPart]);
   }
 }
 
 for (const user of users) {
-    if (user.hobbies.length < 2) {
-      console.log(user);
-    }
+  if (user.hobbies.length < 2) {
+    console.log(user);
   }
+}
 
-  for (const user of users) {
-    for (const hobby of user.hobbies) {
-      console.log(hobby);
-    }
+for (const user of users) {
+  for (const hobby of user.hobbies) {
+    console.log(hobby);
   }
+}
