@@ -123,3 +123,4 @@ addArrow(1,4);
 //divide(9,3);
 const resultArrow = addArrow();
 console.log(resultArrow);
+console.log("Hi!")
