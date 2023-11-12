@@ -118,7 +118,7 @@ function validate(inputVal, params) {
       return;
     }
     else {
-      inputVal.target.style.background = "white";
+      inputVal.target.style.background = "none";
     }
   }
 }
