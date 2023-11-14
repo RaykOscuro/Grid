@@ -9,6 +9,13 @@ body {
   align-items: center;
 }
 
+.card {
+  background-color: coral;
+  max-width: 250px;
+  padding: 16px 32px;
+  margin: 24px;
+}
+
 .container {
   display: grid;
   grid-template-columns: 150px 1fr 150px;
@@ -17,6 +24,14 @@ body {
   margin: auto;
   max-height: 950px;
   gap: 10px;
+}
+
+.redBorder {
+  border-color: red;
+}
+
+.greenBorder {
+  border-color: green;
 }
 
 .box {

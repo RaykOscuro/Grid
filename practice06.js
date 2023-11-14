@@ -62,16 +62,16 @@ function treeRecursion(tree, parent) {
   }
 }
 
-treeRecursion(tree, ul);
+// treeRecursion(tree, ul);
 
 // console.dir(document.body.children[0].children[0]);
 // console.dir(window.document.body.children[0]);
 
-const heading = document.querySelector("h2");
-const btn = document.querySelector("button");
-console.log(heading, btn);
-const input = document.querySelector('input[id="pwd"]');
-const input2 = document.querySelector('input[id="eml"]');
+// const heading = document.querySelector("h2");
+// const btn = document.querySelector("button");
+// console.log(heading, btn);
+// const input = document.querySelector('input[id="pwd"]');
+// const input2 = document.querySelector('input[id="eml"]');
 
 /*
 btn.addEventListener("click", ()=>{
@@ -79,14 +79,16 @@ btn.addEventListener("click", ()=>{
 })
 */
 
-function eventHandler() {
+/*function eventHandler() {
   heading.innerText = "Moo!";
 }
+*/
 
+/*
 btn.addEventListener("click", eventHandler);
 
 input.addEventListener("blur", (event) =>
-  validate(event, {
+  validate(event.target, {
     min: 5,
     max: 15,
     isString: true,
@@ -94,31 +96,53 @@ input.addEventListener("blur", (event) =>
 );
 
 input2.addEventListener("blur", (event) =>
-  validate(event, {
+  validate(event.target, {
     isEmail: true,
   })
 );
 
 function validate(inputVal, params) {
-  const inputValue = inputVal.target.value;
+  const inputValue = inputVal.value;
+  inputVal.classList.add("redBorder");
+  inputVal.classList.remove("greenBorder");
   if (inputValue) {
     if (params.min && inputValue.length < params.min) {
-      inputVal.target.style.background = "red";
+      inputVal.classList.add("redBorder");
       console.log("A");
       return;
     }
     else if (params.max && inputValue.length > params.max) {
-      inputVal.target.style.background = "red";
+      inputVal.classList.add("redBorder");
       console.log("B");
       return;
     }
     else if (params.isString && typeof inputValue != 'string') {
-      inputVal.target.style.background = "red";
+      inputVal.classList.add("redBorder");
       console.log("C");
       return;
     }
     else {
-      inputVal.target.style.background = "none";
+      inputVal.classList.remove("redBorder");
+      inputVal.classList.add("greenBorder");
     }
   }
+}
+*/
+
+const cards = document.querySelectorAll(".card");
+
+for (let card of cards) {
+  card.addEventListener("click", (e) => {
+    const clickedCard = e.target.closest(".card");
+    console.log(clickedCard.querySelector(".card-header h3"));
+    //    console.dir(clickedCard.children[0].children[0]);
+    //    console.log(e.target.parentElement);
+
+    if (clickedCard.firstElementChild) {
+      clickedCard.firstElementChild.style.backgroundColor = "blue";
+    }
+    if (clickedCard.previousElementSibling) {
+      clickedCard.previousElementSibling.style.backgroundColor = "orange";
+    }
+  });
 }
