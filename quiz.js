@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import { getQuestions } from "./getQuestions.js";
+import { addScores } from "./manageScores.js";
 import rs from "readline-sync";
 
 function playGame() {
@@ -45,6 +46,7 @@ function playGame() {
           `The quiz is over! You got ${correctCounter} out of ${qAmount} questions right!`
         )
       );
+      console.log(addScores(userName, (correctCounter / qAmount) * 100));
     }
   }
 }
