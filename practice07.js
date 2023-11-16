@@ -12,15 +12,13 @@ const containerElement = document.createElement("div");
 containerElement.classList.add("todos-container");
 docBody.prepend(containerElement);
 
-for (x of todos) {
+for (const todo of todos) {
   const newContainer = document.createElement("div");
   newContainer.classList.add("todo");
-  let htmlTag = "<h3>" + x["text"] + "</h3><p>Is done: ";
-  if (x["done"]) {
-    htmlTag += "yes</p>";
-  } else {
-    htmlTag += "no</p>";
-  }
+  let htmlTag = `
+    <h3>${todo.text}</h3>
+    <p>Is done: ${todo.done ? "yes" : "no"}</p>
+  `;
   newContainer.innerHTML = htmlTag;
   containerElement.append(newContainer);
 }
